@@ -12,7 +12,7 @@ import { IS_SSL_PROTOCOL, API_ROUTES } from './commons/constants'
 const app = express()
 
 const PORT = process.env.PORT || 8001
-const BIND = process.env.BIND || '0.0.0.0'
+//const BIND = process.env.BIND || '0.0.0.0'
 
 environmentVarsCheck()
 
@@ -49,7 +49,7 @@ API_ROUTES.forEach(directory => loadRoute(directory))
 
 app.use('/api', routerAPI)
 
-server.listen(PORT, BIND, err => {
+server.listen(PORT, err => {
   if (!err) {
     LOG.info(`API server listening on port ${PORT}`)
   }
