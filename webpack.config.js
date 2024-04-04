@@ -12,7 +12,10 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        parser: {
+          compact: false
+        }
       },
       {
         test: /\.css$/i,
