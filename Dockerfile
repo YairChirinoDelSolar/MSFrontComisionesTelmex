@@ -10,6 +10,6 @@ COPY package*.json ./
 
 EXPOSE 8001
 
-CMD npm run install -s -d
+CMD npm run install
 
 CMD npm run start
