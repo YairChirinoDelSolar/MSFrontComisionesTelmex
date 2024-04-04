@@ -6,10 +6,10 @@ WORKDIR /com-app
 COPY . .
 
 COPY package*.json ./
-
+CMD npm run install
 
 EXPOSE 8001
 
-CMD npm run install
+
 
 CMD npm run start
