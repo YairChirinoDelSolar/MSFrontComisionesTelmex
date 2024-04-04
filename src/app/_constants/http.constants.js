@@ -1,4 +1,4 @@
-export const BASE_URL = '/'
+export const BASE_URL = '' //process.env.NODE_ENV !== 'production' ?  '/' : process.env.BACKEND_SERVER_COMISIONES
 
 export const HTTP_TIMEOUT = 60000
 
