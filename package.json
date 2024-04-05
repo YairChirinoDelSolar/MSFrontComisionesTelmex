@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --env BACKEND_SERVER_COMISIONES=https://qs-telmex.onrender.com --mode production",
-    "start": "concurrently \"babel-node ./src/server\" \"webpack-dev-server\""
+    "start": "concurrently \"babel-node ./src/server\" \"webpack-dev-server\"",
+    "start-prod": "babel-node ./src/server"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.23.3",
