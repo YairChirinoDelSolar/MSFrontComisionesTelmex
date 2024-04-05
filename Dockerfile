@@ -6,7 +6,8 @@ WORKDIR /com-app
 COPY . .
 
 COPY package*.json ./
-CMD npm run install
+RUN npm install
+RUN npm install concurrently
+
 EXPOSE 8001
-CMD npm i concurrently -g
-CMD npm run start
+CMD [ "npm", "run", "start" ]
