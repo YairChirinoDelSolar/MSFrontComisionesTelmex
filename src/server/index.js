@@ -11,7 +11,7 @@ import { IS_SSL_PROTOCOL, API_ROUTES } from './commons/constants'
 // Express APP
 const app = express()
 
-const PORT = process.env.PORT || 8001
+const PORT = process.env.BIND_PORT || 8001
 const BIND = process.env.BIND || '0.0.0.0'
 
 environmentVarsCheck()
