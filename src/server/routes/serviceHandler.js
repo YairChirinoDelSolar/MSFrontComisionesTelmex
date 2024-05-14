@@ -9,8 +9,13 @@ import {
 
 export const serviceHandler = config => (req, res) => {
   const { body, query, headers: clientHeaders } = req
+  const { cookie } = clientHeaders
   LOG.info(`[${config.name}.BODY: ${JSON.stringify(body)}]`)
-  const headers = { 'Content-Type': 'application/json', ...clientHeaders }
+  const headers = {
+    'Content-Type': 'application/json',
+    ...clientHeaders,
+    cookie
+  }
 
   const { protocol, host, port, path: rawPath, method } = config
   let path = replacePathParams({ rawPath, body, query })

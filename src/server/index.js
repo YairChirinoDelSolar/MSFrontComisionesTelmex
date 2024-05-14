@@ -22,6 +22,11 @@ const SSL_PROTOCOL = IS_SSL_PROTOCOL ? 'https' : 'http'
 // eslint-disable-next-line import/no-dynamic-require
 const server = require(SSL_PROTOCOL).createServer(app)
 
+// dir static
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../../dist')))
+}
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
@@ -48,6 +53,7 @@ const loadRoute = directory => {
 API_ROUTES.forEach(directory => loadRoute(directory))
 
 app.use('/api', routerAPI)
+app.use('/health', (req, res) => res.status(200).send('OK'))
 
 server.listen(PORT, BIND, err => {
   if (!err) {
