@@ -5,12 +5,10 @@ import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { SnackbarProvider } from 'notistack'
 
-import { store, configureFakeBackend } from '@helpers'
+import { store } from '@helpers'
 
 // setup fake backend
 import App from '@app'
-
-configureFakeBackend()
 
 const root = createRoot(document.getElementById('root'))
 

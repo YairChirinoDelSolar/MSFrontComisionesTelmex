@@ -39,9 +39,7 @@ export default class ClientHttp {
           resolve(res)
         })
         .catch(error => {
-          const {
-            response: { status = 0 }
-          } = error
+          const { response: { status = 0 } = {} } = error
 
           if (status === 401 && hasItem(USER_CONSTANTS.USER_STORAGE_KEY)) {
             store.dispatch({
